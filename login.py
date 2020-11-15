@@ -23,7 +23,7 @@ mylabel4.grid(row=3,column=0)
 def check():
  username=e.get()
  password=d.get()
- if username=="hpetekar@gmail.com" and password=="Hanmant@123":
+ if username=="abcdef" and password=="abcdef@123":
   msg1="Please wait,we are loading"
   mylabel5=Label(frame,text=msg1,)
   mylabel5.grid(row=5,column=1)
