@@ -1,0 +1,102 @@
+from tkinter import *
+import tkinter
+import time
+from time import sleep
+from tkinter import messagebox
+root=Tk()
+root.title("Login")
+root.geometry("400x400")
+frame=LabelFrame(root,text="Login Page",padx=150,pady=175,bg="green")
+frame.pack()
+mylabel=Label(frame,text="Username")
+mylabel.grid(row=0,column=0)
+e=Entry(frame,width=20)
+e.grid(row=0,column=1)
+mylabel3=Label(frame,text="     ",bg="green")
+mylabel3.grid(row=1,column=1)
+mylabel2=Label(frame,text="Password")
+mylabel2.grid(row=2,column=0)
+d=Entry(frame,width=20,show="*")
+d.grid(row=2,column=1)
+mylabel4=Label(frame,text="      ",bg="green")
+mylabel4.grid(row=3,column=0)
+def check():
+ username=e.get()
+ password=d.get()
+ if username=="hpetekar@gmail.com" and password=="Hanmant@123":
+  msg1="Please wait,we are loading"
+  mylabel5=Label(frame,text=msg1,)
+  mylabel5.grid(row=5,column=1)
+  time.sleep(5)
+  root1=Tk()
+  root1.title("Welcome to SGGS Resut Portal")
+  root1.geometry("500x500")
+  frame2=LabelFrame(root1,text="Home",bg="purple")
+  frame2.pack()
+  mybu=Button(root1,text="Log out",bg="orange",command=root1.quit)
+  mybu.pack()
+  myl=Label(frame2,text="Name",bg="white",fg="black")
+  myl.grid(row=0,column=0)
+  myl1=Label(frame2,text="  : ",bg="purple")
+  myl1.grid(row=0,column=1)
+  myl2=Label(frame2,text="Garad Virendra Vilas",bg="white",fg="black")
+  myl2.grid(row=0,column=2)
+  myl1=Label(frame2,text="  ",bg="purple")
+  myl1.grid(row=1,column=1)
+  myl=Label(frame2,text="Reg.no",bg="white",fg="black")
+  myl.grid(row=2,column=0)
+  myl1=Label(frame2,text=" :  ",bg="purple")
+  myl1.grid(row=2,column=1)
+  myl2=Label(frame2,text="2018BCS059              ",bg="white",fg="black")
+  myl2.grid(row=2,column=2)
+ 
+  def result():
+   myla=Label(frame2,text="Subject",bg="white",fg="black")
+   myla.grid(row=4,column=0)
+   myl1=Label(frame2,text="  : ",bg="purple")
+   myl1.grid(row=4,column=1)
+   myl2=Label(frame2,text="Grade",bg="white",fg="black")
+   myl2.grid(row=4,column=2)
+   myl1=Label(frame2,text="  ",bg="purple")
+   myl1.grid(row=5,column=1)
+   myl=Label(frame2,text="M-3",fg="black")
+   myl.grid(row=6,column=0)
+   myl1=Label(frame2,text=" :  ",bg="purple")
+   myl1.grid(row=6,column=1)
+   myl2=Label(frame2,text="D",fg="black")
+   myl2.grid(row=6,column=2)
+   myl=Label(frame2,text="  ",bg="purple")
+   myl.grid(row=7,column=0)
+   myl1=Label(frame2,text="NSC ",fg="black")
+   myl1.grid(row=8,column=0)
+   myl2=Label(frame2,text=" :",bg="purple")
+   myl2.grid(row=8,column=1)
+   myl1=Label(frame2,text=" A",fg="black")
+   myl1.grid(row=8,column=2)
+   myl=Label(frame2,text="  ",bg="purple")
+   myl.grid(row=9,column=0)
+   myl1=Label(frame2,text="HVPE",fg="black")
+   myl1.grid(row=10,column=0)
+   myl2=Label(frame2,text=": ",bg="purple")
+   myl2.grid(row=10,column=1)
+   myl2=Label(frame2,text="SPC",fg="black")
+   myl2.grid(row=10,column=2)
+  
+   
+  myb=Button(frame2,text="Get Result",bg="red",fg="black",command=result)
+  myb.grid(row=3,column=1)
+  root1.mainloop()
+ else:
+  messagebox.showerror("popup","Invalid Credetial")
+  ans=messagebox.askyesno("popup","you want correct it")
+  if ans== 1:
+   e.delete(0,END)
+   d.delete(0,END)
+   
+  
+mybutton=Button(frame,text="Submit",bg="blue",fg="black",command=check)
+mybutton.grid(row=4,column=1)
+root.mainloop()
+
+
+
